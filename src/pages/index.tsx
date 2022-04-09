@@ -1,9 +1,14 @@
-import Head from "next/head";
-import Image from "next/image";
 import Layout from "../components/Layout";
-import styles from "../styles/Home.module.css";
+import Tabela from "../components/Tabela";
+import Cliente from "../core/Cliente";
 
 export default function Home() {
+  const clientes = [
+    new Cliente("Ana", 29, "ana@gmail.com", "1"),
+    new Cliente("Bia", 33, "bia@gmail.com", "2"),
+    new Cliente("Carlos", 19, "carlos@gmail.com", "3"),
+    new Cliente("Igor", 25, "igor@gmail.com", "4"),
+  ];
   return (
     <div
       className={`
@@ -13,7 +18,7 @@ export default function Home() {
     `}
     >
       <Layout titulo="Cadastro Simples">
-        <span>Conteudo</span>
+        <Tabela clientes={clientes}></Tabela>
       </Layout>
     </div>
   );
